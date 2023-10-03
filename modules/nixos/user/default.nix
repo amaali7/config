@@ -103,7 +103,7 @@ in {
             type = "Application";
           };
         };
-        programs.go.enable = true;
+        programs.home-manager = enabled;
         programs.git = {
           enable = true;
           userName = "Abdallah Ali";
