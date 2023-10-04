@@ -15,7 +15,7 @@ in {
       };
     };
     programs.waybar = enabled;
-
+    services.xserver.desktopManager.xfce = enabled;
     amaali7 = {
       # desktop.eww-hyprland = enabled;
       home = {
