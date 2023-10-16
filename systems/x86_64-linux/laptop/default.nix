@@ -16,31 +16,31 @@ with lib.amaali7; {
   amaali7 = {
     nix = enabled;
     common = enabled;
-    vm.waydroid = enabled;
+    # vm.waydroid = enabled;
     security = enabled;
     services = enabled;
-    games = enabled;
+    # games = enabled;
     desktop = {
       common-tiling = enabled;
       themes = enabled;
       xfce = enabled;
     };
-    develop.surrealdb = enabled;
+    # develop.surrealdb = enabled;
     groups = {
       common = enabled;
       develop = enabled;
     };
     media = {
-      gimp = enabled;
-      mousai = enabled;
-      obs-studio = enabled;
+      # gimp = enabled;
+      # mousai = enabled;
+      # obs-studio = enabled;
       vlc = enabled;
     };
-    office = {
-      obsidian = enabled;
-      zathura = enabled;
-      libreoffice = enabled;
-    };
+    # office = {
+    # obsidian = enabled;
+    # zathura = enabled;
+    # libreoffice = enabled;
+    # };
     web = enabled;
   };
 

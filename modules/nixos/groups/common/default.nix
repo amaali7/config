@@ -14,7 +14,7 @@ in {
       desktop.common = enabled;
       media.common = enabled;
       security.doas = enabled;
-      tools.audio = enabled;
+      # tools.audio = enabled;
     };
   };
 }
