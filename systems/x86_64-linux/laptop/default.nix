@@ -25,22 +25,22 @@ with lib.amaali7; {
       themes = enabled;
       xfce = enabled;
     };
-    # develop.surrealdb = enabled;
+    develop.surrealdb = enabled;
     groups = {
       common = enabled;
       develop = enabled;
     };
     media = {
-      # gimp = enabled;
-      # mousai = enabled;
-      # obs-studio = enabled;
+      gimp = enabled;
+      mousai = enabled;
+      obs-studio = enabled;
       vlc = enabled;
     };
-    # office = {
-    # obsidian = enabled;
-    # zathura = enabled;
-    # libreoffice = enabled;
-    # };
+    office = {
+      obsidian = enabled;
+      zathura = enabled;
+      libreoffice = enabled;
+    };
     web = enabled;
   };
 

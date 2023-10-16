@@ -11,7 +11,7 @@
   boot.plymouth.enable = true;
 
   fileSystems."/" = {
-    device = "/dev/disk/by-uuid/7a2cecc8-994b-4d1a-8ece-d551bd6e8934";
+    device = "/dev/disk/by-uuid/642a5e50-d7c9-4aa1-a682-02248b725492";
     fsType = "ext4";
   };
 
