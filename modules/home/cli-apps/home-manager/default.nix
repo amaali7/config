@@ -13,6 +13,6 @@ in
 
   config = mkIf cfg.enable {
     programs.home-manager = enabled;
-    environment.systemPackages = with pkgs; [ home-manager ];
+    # environment.systemPackages = with pkgs; [ home-manager ];
   };
 }

@@ -19,7 +19,7 @@ with lib.amaali7; {
     # vm.waydroid = enabled;
     security = enabled;
     services = enabled;
-    # games = enabled;
+    games = enabled;
     desktop = {
       common-tiling = enabled;
       themes = enabled;
