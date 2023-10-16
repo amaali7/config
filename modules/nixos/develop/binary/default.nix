@@ -7,6 +7,6 @@ in {
   };
 
   config = mkIf cfg.enable {
-    environment.systemPackages = with pkgs; with pkgs.amaali7; [ binutils ];
+    environment.systemPackages = with pkgs; with pkgs.amaali7; [ binutils lldb ];
   };
 }

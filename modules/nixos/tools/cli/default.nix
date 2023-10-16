@@ -13,6 +13,7 @@ in {
       enable = true;
       shellAliases = {
         ll = "ls -l";
+        ls = "lsd";
         update-system =
           "cd ~/work/nixos/ && doas nixos-rebuild switch --flake .#laptop";
       };

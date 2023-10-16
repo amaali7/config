@@ -21,7 +21,7 @@
     # Flake Hygiene
     flake-checker = {
       url = "github:DeterminateSystems/flake-checker";
-      inputs.nixpkgs.follows = "nixpkgs";
+      # inputs.nixpkgs.follows = "nixpkgs";
     };
 
     # Run unpatched dynamically compiled binaries
@@ -72,7 +72,8 @@
           };
         };
       };
-    in lib.mkFlake {
+    in
+    lib.mkFlake {
       channels-config = { allowUnfree = true; };
 
       overlays = with inputs; [ nixgl.overlay nixpkgs-f2k.overlays.default ];

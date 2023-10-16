@@ -9,7 +9,7 @@ in {
   config = mkIf cfg.enable {
     environment.systemPackages = with pkgs;
       with pkgs.amaali7; [
-        picom
+        # picom
         pulseaudio
         bat
         exa
@@ -20,20 +20,25 @@ in {
         mpd
         ncmpcpp
         rofi
-        redshift
+        # redshift
         brightnessctl
         upower
         inotify-tools
         acpid
         wmctrl
-        xdotool
-        xclip
+        # xdotool
+        # xclip
         scrot
         alsa-utils
         acpi
-        mpdris2
+        # mpdris2
         dunst
-        nitrogen
+        # nitrogen
+        # Rust Base
+        zellij
+        yazi
+        helix
+        lsd
       ];
   };
 }
