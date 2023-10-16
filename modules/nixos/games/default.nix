@@ -7,6 +7,9 @@ in {
   };
 
   config = mkIf cfg.enable {
-    environment.systemPackages = with pkgs; [ zeroad gnome.aisleriot ];
+    environment.systemPackages = with pkgs; [
+      # zeroad 
+      gnome.aisleriot
+    ];
   };
 }
