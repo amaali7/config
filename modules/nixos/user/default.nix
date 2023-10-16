@@ -16,15 +16,17 @@ let
 
     passthru = { fileName = defaultIconFileName; };
   };
-  propagatedIcon = pkgs.runCommandNoCC "propagated-icon" {
-    passthru = { fileName = cfg.icon.fileName; };
-  } ''
+  propagatedIcon = pkgs.runCommandNoCC "propagated-icon"
+    {
+      passthru = { fileName = cfg.icon.fileName; };
+    } ''
     local target="$out/share/amaali7-icons/user/${cfg.name}"
     mkdir -p "$target"
 
     cp ${cfg.icon} "$target/${cfg.icon.fileName}"
   '';
-in {
+in
+{
   options.amaali7.user = with types; {
     name = mkOpt str "ai3wm" "The name to use for the user account.";
     fullName = mkOpt str "Abdallah Adam" "The full name of the user.";
@@ -71,7 +73,7 @@ in {
           sessionVariables = {
             QT_XCB_GL_INTEGRATION = "none"; # kde-connect
             EDITOR = "nvim";
-            VISUAL = "code";
+            VISUAL = "neovide";
             # BROWSER = "flatpak run org.mozilla.firefox";
             TERMINAL = "nixGL wezterm";
             XCURSOR_THEME = "Qogir";
@@ -91,14 +93,14 @@ in {
             categories = [ "System" "TerminalEmulator" "Utility" ];
             terminal = false;
           };
-          "code" = {
+          "neovide" = {
             categories = [ "Utility" "TextEditor" "Development" "IDE" ];
             comment = "Code Editing. Redefined.";
-            exec = "${pkgs.vscode}/bin/code %F";
+            exec = "/usr/bin/env -u WAYLAND_DISPLAY neovide %F";
             genericName = "Text Editor";
-            icon = "code";
+            icon = "neovide";
             mimeType = [ "text/plain" "inode/directory" ];
-            name = "Visual Studio Code";
+            name = "NeoVide";
             startupNotify = true;
             type = "Application";
           };
@@ -109,18 +111,6 @@ in {
           userName = "Abdallah Ali";
           userEmail = "amaali1991@gmail.com";
           aliases = { st = "status"; };
-        };
-        programs.emacs = {
-          enable = false;
-          package = pkgs.emacsPgtkNativeComp;
-          extraPackages = (epkgs: [ epkgs.vterm epkgs.telega ]);
-        };
-        programs.ncmpcpp.settings = {
-          visualizer_data_source = "/tmp/mpd.fifo";
-          visualizer_output_name = "PulseAudio";
-          visualizer_in_stereo = "yes";
-          visualizer_type = "ellipse";
-          visualizer_look = "+|";
         };
         home.shellAliases = {
           lc = "${pkgs.colorls}/bin/colorls --sd";
@@ -164,7 +154,7 @@ in {
       # system to select).
       # uid = 1000;
 
-      extraGroups = [ "wheel" "dialout" ] ++ cfg.extraGroups;
+      extraGroups = [ "wheel" "dialout" "network" ] ++ cfg.extraGroups;
     } // cfg.extraOptions;
   };
 }

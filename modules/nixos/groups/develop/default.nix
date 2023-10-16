@@ -11,24 +11,24 @@ in {
     amaali7 = {
       tools.direnv = enabled;
       develop = {
-        # binary = enabled;
-        # build = enabled;
-        # c_cpp = enabled;
-        # c_cpp_libs = enabled;
-        # javascript = enabled;
+        binary = enabled;
+        build = enabled;
+        c_cpp = enabled;
+        c_cpp_libs = enabled;
+        javascript = enabled;
         python = enabled;
         rust = enabled;
         lua = enabled;
         toolkit = {
           common = enabled;
-          # docker = enabled;
+          docker = enabled;
           # emacs = enabled;
           git = enabled;
-          neovide =enabled;
+          neovide = enabled;
         };
         web = {
-          # enable = true;
-          # altair = enabled;
+          enable = true;
+          altair = enabled;
         };
       };
     };
