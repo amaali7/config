@@ -11,7 +11,8 @@ let
         mkOpt (nullOr str) null "The trusted public key for this substituter.";
     };
   });
-in {
+in
+{
   options.amaali7.nix = with types; {
     enable = mkBoolOpt true "Whether or not to manage nix configuration.";
     package = mkOpt package pkgs.nixUnstable "Which nix package to use.";
@@ -28,10 +29,12 @@ in {
   };
 
   config = mkIf cfg.enable {
-    assertions = mapAttrsToList (name: value: {
-      assertion = value.key != null;
-      message = "amaali7.nix.extra-substituters.${name}.key must be set";
-    }) cfg.extra-substituters;
+    assertions = mapAttrsToList
+      (name: value: {
+        assertion = value.key != null;
+        message = "amaali7.nix.extra-substituters.${name}.key must be set";
+      })
+      cfg.extra-substituters;
 
     environment.systemPackages = with pkgs; [
       amaali7.nixos-revision
@@ -43,7 +46,6 @@ in {
       nix-index
       nix-prefetch-git
       nix-output-monitor
-      flake-checker
       nixpkgs-fmt
       nil
       rnix-lsp
@@ -51,42 +53,44 @@ in {
       deploy-rs
     ];
 
-    nix = let
-      users = [ "root" config.amaali7.user.name ]
-        ++ optional config.services.hydra.enable "hydra";
-    in {
-      package = cfg.package;
+    nix =
+      let
+        users = [ "root" config.amaali7.user.name ]
+          ++ optional config.services.hydra.enable "hydra";
+      in
+      {
+        package = cfg.package;
 
-      settings = {
-        experimental-features = "nix-command flakes";
-        http-connections = 50;
-        warn-dirty = false;
-        log-lines = 50;
-        sandbox = "relaxed";
-        auto-optimise-store = true;
-        trusted-users = users;
-        allowed-users = users;
+        settings = {
+          experimental-features = "nix-command flakes";
+          http-connections = 50;
+          warn-dirty = false;
+          log-lines = 50;
+          sandbox = "relaxed";
+          auto-optimise-store = true;
+          trusted-users = users;
+          allowed-users = users;
 
-        substituters = [ cfg.default-substituter.url ]
-          ++ (mapAttrsToList (name: value: name) cfg.extra-substituters);
-        trusted-public-keys = [ cfg.default-substituter.key ]
-          ++ (mapAttrsToList (name: value: value.key) cfg.extra-substituters);
+          substituters = [ cfg.default-substituter.url ]
+            ++ (mapAttrsToList (name: value: name) cfg.extra-substituters);
+          trusted-public-keys = [ cfg.default-substituter.key ]
+            ++ (mapAttrsToList (name: value: value.key) cfg.extra-substituters);
 
-      } // (lib.optionalAttrs config.amaali7.tools.direnv.enable {
-        keep-outputs = true;
-        keep-derivations = true;
-      });
+        } // (lib.optionalAttrs config.amaali7.tools.direnv.enable {
+          keep-outputs = true;
+          keep-derivations = true;
+        });
 
-      gc = {
-        automatic = true;
-        dates = "weekly";
-        options = "--delete-older-than 30d";
+        gc = {
+          automatic = true;
+          dates = "weekly";
+          options = "--delete-older-than 30d";
+        };
+
+        # flake-utils-plus
+        generateRegistryFromInputs = true;
+        generateNixPathFromInputs = true;
+        linkInputs = true;
       };
-
-      # flake-utils-plus
-      generateRegistryFromInputs = true;
-      generateNixPathFromInputs = true;
-      linkInputs = true;
-    };
   };
 }

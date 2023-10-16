@@ -18,12 +18,6 @@
     comma.url = "github:nix-community/comma";
     comma.inputs.nixpkgs.follows = "nixpkgs";
 
-    # Flake Hygiene
-    flake-checker = {
-      url = "github:DeterminateSystems/flake-checker";
-      # inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     # Run unpatched dynamically compiled binaries
     nix-ld = {
       url = "github:Mic92/nix-ld";

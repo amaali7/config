@@ -3,5 +3,5 @@
 final: prev:
 
 {
-  inherit (channels.unstable) lapce;
+  inherit (channels.unstable) yazi;
 }
