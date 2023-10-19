@@ -11,6 +11,7 @@ in {
     amaali7 = {
       tools.direnv = enabled;
       develop = {
+        assembly = enabled;
         binary = enabled;
         build = enabled;
         c_cpp = enabled;
