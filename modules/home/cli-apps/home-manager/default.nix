@@ -1,4 +1,4 @@
-{ lib, config, ... }:
+{ lib, config, inputs, ... }:
 
 let
   inherit (lib) mkEnableOption mkIf;
@@ -13,6 +13,6 @@ in
 
   config = mkIf cfg.enable {
     programs.home-manager = enabled;
-    # environment.systemPackages = with pkgs; [ home-manager ];
+
   };
 }

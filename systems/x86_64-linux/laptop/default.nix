@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ pkgs, lib, inputs, ... }:
 
 with lib;
 with lib.amaali7; {
@@ -18,12 +18,16 @@ with lib.amaali7; {
       hashedPassword = "grub.pbkdf2.sha512.10000.A1BCF32710C6D9E553CC9D5C528E822BBB6D3CA91F08B9312B23111D7BBE275FDB7B20035389B2CF3895B3F1DA91B675251F655C03923CD48AF527D32B8A36BE.BBC15665DBCD6CB049B793546C523A094BE889FFEABDEAD642E924D49545CCDE5ED4448B2E5321D3CD21452570FE1FEBDB60A75DDF862B58E602D6BDED21343C";
     };
   };
+  environment.etc."crypttab".text = ''
+    root /dev/disk/by-uuid/9e56ed11-d281-4439-9b9d-a99eba30c275 /etc/secrets/initrd/keyfile0.bin
+    nix-stor /dev/disk/by-uuid/17b41ea9-1038-479b-bdbc-147ed1940efe /etc/secrets/initrd/keyfile0.bin
+  '';
   boot.plymouth = { enable = true; };
-  boot.initrd.secrets = { "/crypto_keyfile.bin" = null; };
   boot.kernelModules = [ "kvm-intel" ];
 
   time.timeZone = "Africa/Cairo";
 
+  environment.systemPackages = [ inputs.home-manager.packages.${pkgs.system}.home-manager ];
   amaali7 = {
     nix = enabled;
     common = enabled;
