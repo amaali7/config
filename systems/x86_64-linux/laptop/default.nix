@@ -12,6 +12,7 @@ with lib.amaali7; {
     device = "nodev";
     efiSupport = true;
     enableCryptodisk = true;
+    useOSProber = true;
   };
   boot.loader.grub.users = {
     root = {
