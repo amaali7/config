@@ -47,7 +47,6 @@ in
       desktop = {
         hyprland = enabled;
         common-tiling = enabled;
-
       };
       web.firefox = enabled;
     };
@@ -68,21 +67,18 @@ in
       };
       extraOptions = {
         targets.genericLinux.enable = true;
-
         home = {
           sessionVariables = {
             QT_XCB_GL_INTEGRATION = "none"; # kde-connect
             EDITOR = "nvim";
             VISUAL = "neovide";
             # BROWSER = "flatpak run org.mozilla.firefox";
-            TERMINAL = "nixGL wezterm";
+            TERMINAL = "wezterm";
             XCURSOR_THEME = "Qogir";
             NIXPKGS_ALLOW_UNFREE = "1";
             SHELL = "${pkgs.fish}/bin/fish";
           };
-
-          sessionPath = [ "$HOME/.local/bin" ];
-
+          sessionPath = [ "$HOME/.local/bin" "$HOME/.cargo/bin/" "$HOME/.npm-packages/bin/" ];
         };
         xdg.desktopEntries = {
           "org.wezfurlong.wezterm" = {
@@ -119,6 +115,8 @@ in
           lclg = "lc -1 --gs";
           lcu = "${pkgs.colorls}/bin/colorls -U";
           lclu = "${pkgs.colorls}/bin/colorls -U -1";
+          vim = "nvim";
+          vi = "nvim";
         };
         # User config
         programs = {

@@ -47,6 +47,7 @@ in
       nix-prefetch-git
       nix-output-monitor
       nixpkgs-fmt
+      nixd
       nil
       rnix-lsp
       stdenv

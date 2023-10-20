@@ -8,7 +8,11 @@ in {
 
   config = mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
-    nasm
+      nasm
+      imhex
+      radare2
+      pwndbg
+      # ghidra
     ];
   };
 }
