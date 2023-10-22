@@ -8,7 +8,7 @@ in {
   };
 
   config = mkIf cfg.enable {
-    amaali7 = { tools = { cli = { neofetch = enabled; }; }; };
+    amaali7 = { tools = { cli = { sys-fetch = enabled; }; }; };
     programs.fish = {
       enable = true;
       shellAliases = {
