@@ -9,6 +9,7 @@ in {
 
   config = mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
+      rust-script
       rustup
       diesel-cli
       sqlite

@@ -38,7 +38,10 @@
       url = "github:hyprwm/contrib";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
+    rust-overlay = {
+      url = "github:oxalica/rust-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nixgl = {
       url = "github:guibou/nixGL";
       inputs.nixpkgs.follows = "nixpkgs";
