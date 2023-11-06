@@ -9,6 +9,7 @@ in {
   config = mkIf cfg.enable {
     environment.systemPackages = with pkgs;
       with pkgs.amaali7; [
+        avrdude
         pkgsCross.avr.buildPackages.gcc
       ];
   };
