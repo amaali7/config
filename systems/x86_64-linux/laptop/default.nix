@@ -20,6 +20,7 @@ with lib.amaali7; {
 
   environment.systemPackages = [ inputs.home-manager.packages.${pkgs.system}.home-manager ];
   amaali7 = {
+    develop.embdedded = enabled;
     nix = enabled;
     common = enabled;
     # vm.waydroid = enabled;

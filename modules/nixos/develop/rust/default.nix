@@ -14,6 +14,7 @@ in {
       diesel-cli
       sqlite
       sqlite.dev
+      cargo-generate
     ];
   };
 }
