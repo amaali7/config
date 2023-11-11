@@ -11,7 +11,6 @@ in {
     services.asusd = enabled;
     environment.systemPackages = with pkgs;
       with pkgs.amaali7; [
-        brightnessctl
         minicom
         openocd
         nixgl.nixGLIntel

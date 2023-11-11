@@ -10,12 +10,8 @@ in {
   config = mkIf cfg.enable {
     environment.systemPackages = with pkgs;
       with pkgs.amaali7; [
-        alsa-utils
-        playerctl
         cava
         sptlrx
-        pavucontrol
-        libpulseaudio
       ];
   };
 }

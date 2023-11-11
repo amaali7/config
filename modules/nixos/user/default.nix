@@ -48,7 +48,6 @@ in
         hyprland = enabled;
         common-tiling = enabled;
       };
-      web.firefox = enabled;
     };
 
     amaali7.home = {

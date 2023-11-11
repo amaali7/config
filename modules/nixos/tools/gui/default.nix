@@ -11,13 +11,8 @@ in {
     environment.systemPackages = with pkgs;
       with pkgs.amaali7; [
         baobab
-        testdisk-qt
-        feh
-        sqliteman
-        alarm-clock-applet
         bleachbit
         gtk3
-        gparted
       ];
   };
 }

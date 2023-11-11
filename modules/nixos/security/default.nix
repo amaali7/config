@@ -9,6 +9,10 @@ in {
   config = mkIf cfg.enable {
     security.rtkit.enable = true;
     security.polkit.enable = true;
+    security = {
+      # allow wayland lockers to unlock the screen
+      pam.services.swaylock.text = "auth include login";
 
+    };
   };
 }

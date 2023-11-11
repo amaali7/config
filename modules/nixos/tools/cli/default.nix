@@ -8,14 +8,13 @@ in {
   };
 
   config = mkIf cfg.enable {
-    amaali7 = { tools = { cli = { sys-fetch = enabled; }; }; };
     programs.fish = {
       enable = true;
       shellAliases = {
         ll = "ls -l";
         ls = "lsd";
         update-system =
-          "cd ~/work/nixos/ && doas nixos-rebuild switch --flake .#laptop";
+          "cd ~/work/Nix/config/ && doas nixos-rebuild switch --flake .#laptop";
       };
     };
     users.defaultUserShell = pkgs.fish;
