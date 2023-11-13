@@ -15,9 +15,9 @@ with lib.amaali7;
   };
 
   amaali7 = {
-    archetypes = {
-      server = enabled;
-    };
+    # archetypes = {
+    #   server = enabled;
+    # };
 
     system = {
       boot = {

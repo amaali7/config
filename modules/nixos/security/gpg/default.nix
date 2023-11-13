@@ -42,7 +42,7 @@ let
     desktopName = "Yubikey Guide";
     genericName = "View Yubikey Guide in a web browser";
     exec = "${pkgs.xdg-utils}/bin/xdg-open ${guideHTML}";
-    icon = ./yubico-icon.svg;
+    # icon = ./yubico-icon.svg;
     categories = [ "System" ];
   };
 

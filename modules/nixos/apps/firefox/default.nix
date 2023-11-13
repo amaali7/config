@@ -31,12 +31,12 @@ in
     # services.gnome.gnome-browser-connector.enable = config.amaali7.desktop.gnome.enable;
 
     amaali7.home = {
-      file = {
-        ".mozilla/native-messaging-hosts/com.dannyvankooten.browserpass.json".source = "${pkgs.browserpass}/lib/mozilla/native-messaging-hosts/com.dannyvankooten.browserpass.json";
-
-        ".mozilla/native-messaging-hosts/org.gnome.chrome_gnome_shell.json".source = mkIf config.amaali7.desktop.gnome.enable "${pkgs.chrome-gnome-shell}/lib/mozilla/native-messaging-hosts/org.gnome.chrome_gnome_shell.json";
-      };
-
+      # file = {
+      #   ".mozilla/native-messaging-hosts/com.dannyvankooten.browserpass.json".source = "${pkgs.browserpass}/lib/mozilla/native-messaging-hosts/com.dannyvankooten.browserpass.json";
+      #
+      #   ".mozilla/native-messaging-hosts/org.gnome.chrome_gnome_shell.json".source = mkIf config.amaali7.desktop.gnome.enable "${pkgs.chrome-gnome-shell}/lib/mozilla/native-messaging-hosts/org.gnome.chrome_gnome_shell.json";
+      # };
+      #
       extraOptions = {
         programs.firefox = {
           enable = true;
@@ -44,13 +44,13 @@ in
             {
               cfg = {
                 enableBrowserpass = true;
-                enableGnomeExtensions = config.amaali7.desktop.gnome.enable;
+                # enableGnomeExtensions = config.amaali7.desktop.gnome.enable;
               };
 
-              extraNativeMessagingHosts =
-                optional
-                  config.amaali7.desktop.gnome.enable
-                  pkgs.gnomeExtensions.gsconnect;
+              # extraNativeMessagingHosts =
+              #   optional
+              #     config.amaali7.desktop.gnome.enable
+              #     pkgs.gnomeExtensions.gsconnect;
             }
           );
 

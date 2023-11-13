@@ -32,6 +32,7 @@ in
         comma = enabled;
         nix-ld = enabled;
         bottom = enabled;
+        cli = enabled;
       };
 
       hardware = {
