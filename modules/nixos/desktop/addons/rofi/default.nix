@@ -13,6 +13,6 @@ in
   config = mkIf cfg.enable {
     environment.systemPackages = with pkgs; [ rofi ];
 
-    amaali7.home.configFile."rofi/config.rasi".source = ./config.rasi;
+    # amaali7.home.configFile."rofi/config.rasi".source = ./config.rasi;
   };
 }

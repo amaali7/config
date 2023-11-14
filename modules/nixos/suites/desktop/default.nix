@@ -21,6 +21,7 @@ in
 
       apps = {
         firefox = enabled;
+        brave = enabled;
         vlc = enabled;
         logseq = enabled;
         twitter = enabled;

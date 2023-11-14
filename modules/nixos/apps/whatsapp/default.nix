@@ -8,8 +8,7 @@ in {
 
   config = mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
-      tdlib
-      tdesktop
+      whatsapp-for-linux
     ];
   };
 }

@@ -10,7 +10,6 @@ in {
   config = mkIf cfg.enable {
     environment.systemPackages = with pkgs.xfce;
       with pkgs.amaali7; [
-        xfce.ristretto
         xfce4-power-manager
         thunar
         thunar-volman

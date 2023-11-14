@@ -23,7 +23,7 @@ in {
           foot
           dmenu
           waybar
-          alacritty
+
           wofi
           autotiling-rs
           light
@@ -43,15 +43,6 @@ in {
     programs.waybar.enable = true;
     amaali7 = {
       desktop.wayland = enabled;
-      home = {
-        extraOptions = {
-          home.packages = with pkgs;
-            [
-              # mpd
-              ncmpcpp
-            ];
-        };
-      };
     };
   };
 }

@@ -15,32 +15,19 @@ in {
       };
     };
     programs.waybar = enabled;
-    services.xserver.desktopManager.xfce = enabled;
+
     amaali7 = {
-      # desktop.eww-hyprland = enabled;
+      desktop = {
+        addons = {
+          rofi = enabled;
+        };
+        common-tiling = enabled;
+        themes = enabled;
+        wayland = enabled;
+        xfce = enabled;
+      };
       home = {
         extraOptions = {
-          home.file = {
-            ".local/bin/hypr" = {
-              executable = true;
-              text = ''
-                #!${pkgs.bash}/bin/bash
-                  export WLR_NO_HARDWARE_CURSORS=1
-                  export _JAVA_AWT_WM_NONREPARENTING=1
-                  . "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
-
-                  if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
-                    PATH="$HOME/.local/bin:$HOME/bin:$PATH"; fi
-
-                  if ! [[ "$PATH" =~ "$HOME/.nix-profile/bin:" ]]; then
-                    PATH="$HOME/.nix-profile/bin:$PATH"; fi
-
-                  export PATH
-                  # exec nixGL ${pkgs.hyprland}/bin/Hyprland
-                  exec Hyprland
-              '';
-            };
-          };
           home.packages = with pkgs; [
             foot
             wofi
@@ -65,13 +52,6 @@ in {
             inputs.hyprland-contrib.packages.${pkgs.system}.hyprprop
           ];
         };
-        # file.".config/hypr/hyprland.conf".source = ./hyprland.conf;
-        # file.".config/hypr/hyprpaper.conf".source = ./hyprpaper.conf;
-        # file.".config/hypr/autostart.conf".source = ./autostart.conf;
-        # file.".config/hypr/binds.conf".source = ./binds.conf;
-        # file.".config/hypr/settings.conf".source = ./settings.conf;
-        # file.".config/hypr/theme.conf".source = ./theme.conf;
-        # file.".config/hypr/rules.conf".source = ./rules.conf;
       };
     };
   };

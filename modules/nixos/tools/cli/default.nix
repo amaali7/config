@@ -43,6 +43,7 @@ in {
         ranger
         socat
         jq
+        freshfetch
         htop
         acpi
         inotify-tools

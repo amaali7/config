@@ -207,11 +207,11 @@
         permittedInsecurePackages = [
           # @FIXME(jakehamilton): This is a workaround for 22.11 and can
           # be removed once NixPkgs is upgraded to 23.05.
-          "electron-20.3.11"
-          "nodejs-16.20.0"
-          "python-2.7.18.6"
-
-          "electron-22.3.27"
+          # "electron-20.3.11"
+          # "nodejs-16.20.0"
+          # "python-2.7.18.6"
+          "electron-24.8.6"
+          # "electron-22.3.27"
         ];
       };
       overlays = with inputs; [
