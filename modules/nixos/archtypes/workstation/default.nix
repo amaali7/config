@@ -25,6 +25,9 @@ in
       tools = {
         appimage-run = enabled;
       };
+      user.extraOptions = {
+        amaali7.user.desktop = enabled;
+      };
     };
   };
 }

@@ -18,9 +18,6 @@ in {
 
     amaali7 = {
       desktop = {
-        addons = {
-          rofi = enabled;
-        };
         common-tiling = enabled;
         themes = enabled;
         wayland = enabled;
