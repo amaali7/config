@@ -15,7 +15,6 @@ in
     amaali7 = {
       desktop = {
         hyprland = enabled;
-        cde = enabled;
         addons = {
           wallpapers = enabled;
           rofi = enabled;
