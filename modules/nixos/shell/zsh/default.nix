@@ -33,14 +33,15 @@ in
       shellAliases = {
         ll = "ls -l";
         ls = "lsd";
+        gadd = "git add -A";
+        gcom = "git commit -m $1";
       };
       histSize = 10000;
-      oh-my-zsh = {
+      ohMyZsh = {
         enable = true;
         theme = "robbyrussell";
         plugins = [
           "git"
-          "thefuck"
           "sudo"
           "terraform"
           "systemadmin"

@@ -16,6 +16,7 @@ in
       # propagatedIcon
     ];
     amaali7 = {
+      shell.zsh = enabled;
       suites = {
         common = enabled;
         desktop = enabled;
