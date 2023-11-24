@@ -26,6 +26,7 @@ in
         shell = pkgs.zsh;
       };
     };
+    environment.interactiveShellInit = "$HOME/export-esp.sh";
     users.defaultUserShell = pkgs.zsh;
     environment.shells = with pkgs; [ zsh ];
     programs.zsh = {
