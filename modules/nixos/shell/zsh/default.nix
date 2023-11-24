@@ -37,8 +37,15 @@ in
       histSize = 10000;
       oh-my-zsh = {
         enable = true;
-        plugins = [ "git" "thefuck" ];
         theme = "robbyrussell";
+        plugins = [
+          "git"
+          "thefuck"
+          "sudo"
+          "terraform"
+          "systemadmin"
+          "vi-mode"
+        ];
       };
     };
 
