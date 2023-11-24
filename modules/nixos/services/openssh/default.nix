@@ -82,15 +82,5 @@ in
 
     amaali7.user.extraOptions.openssh.authorizedKeys.keys =
       cfg.authorizedKeys;
-
-    amaali7.home.extraOptions = {
-      programs.zsh.shellAliases = foldl
-        (aliases: system:
-          aliases // {
-            "ssh-${system}" = "ssh ${system} -t tmux a";
-          })
-        { }
-        (builtins.attrNames other-hosts);
-    };
   };
 }

@@ -56,7 +56,6 @@ in
               TERMINAL = "wezterm";
               XCURSOR_THEME = "Qogir";
               NIXPKGS_ALLOW_UNFREE = "1";
-              SHELL = "${pkgs.fish}/bin/fish";
             };
             sessionPath = [ "$HOME/.local/bin" "$HOME/.cargo/bin/" "$HOME/.npm-packages/bin/" ];
           };

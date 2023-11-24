@@ -16,7 +16,7 @@ in
       desktop = {
         hyprland = enabled;
         sway = enabled;
-        cde = enabled;
+        # cde = enabled;
         addons = {
           wallpapers = enabled;
           rofi = enabled;

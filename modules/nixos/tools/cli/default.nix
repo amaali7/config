@@ -8,17 +8,7 @@ in {
   };
 
   config = mkIf cfg.enable {
-    programs.fish = {
-      enable = true;
-      shellAliases = {
-        ll = "ls -l";
-        ls = "lsd";
-        update-system =
-          "cd ~/work/Nix/config/ && doas nixos-rebuild switch --flake .#laptop";
-      };
-    };
-    users.defaultUserShell = pkgs.fish;
-    environment.shells = with pkgs; [ fish ];
+
     environment.systemPackages = with pkgs;
       with pkgs.amaali7; [
         sqlite
