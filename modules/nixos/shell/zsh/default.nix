@@ -19,6 +19,7 @@ in
             sessionVariables = {
               SHELL = "${pkgs.zsh}/bin/zsh";
             };
+            sessionPath = [ "$HOME/.local/bin" "$HOME/.cargo/bin/" "$HOME/.npm-packages/bin/" ];
           };
         };
       };
