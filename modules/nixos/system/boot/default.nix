@@ -22,6 +22,6 @@ in
     };
     boot.plymouth = { enable = true; };
     # for build raspberry pi image 
-    # boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
+    boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
   };
 }

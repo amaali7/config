@@ -3,14 +3,34 @@
 with lib;
 with lib.amaali7;
 {
-  imports = with inputs.nixos-hardware.nixosModules; [
-    (modulesPath + "/installer/scan/not-detected.nix")
+  # imports = with inputs.nixos-hardware.nixosModules; [
+  #   (modulesPath + "/installer/scan/not-detected.nix")
+  # ];
+  imports = [
+    (modulesPath + "/profiles/base.nix")
+    (modulesPath + "/profiles/installation-device.nix")
+    (modulesPath + "/installer/cd-dvd/sd-image.nix")
   ];
-  nixpkgs.crossSystem.system = "aarch64-linux";
-  nixpkgs.config.allowUnsupportedSystem = true;
-  boot = {
-    kernelPackages = pkgs.linuxKernel.packages.linux_rpi3;
+
+  boot.loader.grub.enable = false;
+  boot.loader.raspberryPi.enable = true;
+  boot.loader.raspberryPi.version = 4;
+  boot.kernelPackages = pkgs.linuxPackages_rpi4;
+
+  boot.consoleLogLevel = lib.mkDefault 7;
+
+  sdImage = {
+    firmwareSize = 128;
+    # This is a hack to avoid replicating config.txt from boot.loader.raspberryPi
+    populateFirmwareCommands =
+      "${config.system.build.installBootLoader} ${config.system.build.toplevel} -d ./firmware";
+    # As the boot process is done entirely in the firmware partition.
+    populateRootCommands = "";
   };
+
+  # the installation media is also the installation target,
+  # so we don't want to provide the installation configuration.nix.
+  installer.cloneConfig = false;
 
   amaali7 = {
     archetypes = {

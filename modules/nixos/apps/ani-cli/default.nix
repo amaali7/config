@@ -7,5 +7,9 @@ in {
   };
 
   config =
-    mkIf cfg.enable { environment.systemPackages = with pkgs.amaali7; [ ani-cli ]; };
+    mkIf cfg.enable {
+      environment.systemPackages = with pkgs.amaali7; [
+        # ani-cli
+      ];
+    };
 }
