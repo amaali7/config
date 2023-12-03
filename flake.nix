@@ -24,7 +24,7 @@
     nixos-generators.inputs.nixpkgs.follows = "nixpkgs";
 
     # Snowfall Lib
-    snowfall-lib.url = "github:snowfallorg/lib/dev";
+    snowfall-lib.url = "github:snowfallorg/lib";
     snowfall-lib.inputs.nixpkgs.follows = "nixpkgs";
 
     # Snowfall Flake
@@ -204,15 +204,15 @@
     lib.mkFlake {
       channels-config = {
         allowUnfree = true;
-        permittedInsecurePackages = [
-          # @FIXME(jakehamilton): This is a workaround for 22.11 and can
-          # be removed once NixPkgs is upgraded to 23.05.
-          # "electron-20.3.11"
-          # "nodejs-16.20.0"
-          # "python-2.7.18.6"
-          "electron-24.8.6"
-          # "electron-22.3.27"
-        ];
+        # permittedInsecurePackages = [
+        #   # @FIXME(jakehamilton): This is a workaround for 22.11 and can
+        #   # be removed once NixPkgs is upgraded to 23.05.
+        #   # "electron-20.3.11"
+        #   # "nodejs-16.20.0"
+        #   # "python-2.7.18.6"
+        #   "electron-24.8.6"
+        #   # "electron-22.3.27"
+        # ];
       };
       overlays = with inputs; [
         neovim.overlays.default
@@ -233,10 +233,10 @@
       systems.hosts.laptop.modules = with inputs;
         [ nixos-hardware.nixosModules.framework ];
       #
-      # deploy = lib.mkDeploy { inherit (inputs) self; };
-      #
-      # checks = builtins.mapAttrs
-      #   (system: deploy-lib: deploy-lib.deployChecks inputs.self.deploy)
-      #   inputs.deploy-rs.lib;
+      deploy = lib.mkDeploy { inherit (inputs) self; };
+
+      checks = builtins.mapAttrs
+        (system: deploy-lib: deploy-lib.deployChecks inputs.self.deploy)
+        inputs.deploy-rs.lib;
     };
 }
