@@ -10,7 +10,7 @@ in {
     programs.hyprland = {
       enable = true;
       xwayland = {
-        hidpi = true;
+        # hidpi = true;
         enable = true;
       };
     };

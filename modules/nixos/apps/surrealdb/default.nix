@@ -11,8 +11,8 @@ in {
     services.surrealdb = {
       enable = true;
       port = 1238;
-      userNamePath = ./username;
-      passwordPath = ./password;
+      # userNamePath = ./username;
+      # passwordPath = ./password;
     };
     environment.systemPackages = with pkgs; [ surrealdb-migrations ];
   };

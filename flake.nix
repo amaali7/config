@@ -2,14 +2,14 @@
 
   description = "Amaali7";
   inputs = {
-    # NixPkgs (nixos-23.05)
+    # NixPkgs (nixos-23.11)
     nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
 
     # NixPkgs Unstable (nixos-unstable)
     unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     # Home Manager (release-22.05)
-    home-manager.url = "github:nix-community/home-manager/release-23.05";
+    home-manager.url = "github:nix-community/home-manager/release-23.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     # macOS Support (master)
@@ -24,7 +24,7 @@
     nixos-generators.inputs.nixpkgs.follows = "nixpkgs";
 
     # Snowfall Lib
-    snowfall-lib.url = "github:snowfallorg/lib";
+    snowfall-lib.url = "github:snowfallorg/lib/dev";
     snowfall-lib.inputs.nixpkgs.follows = "nixpkgs";
 
     # Snowfall Flake
