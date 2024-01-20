@@ -16,7 +16,7 @@ in {
         redshift
         # picom
         bat
-        exa
+        eza
         light
         playerctl
         maim

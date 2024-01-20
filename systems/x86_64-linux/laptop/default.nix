@@ -10,7 +10,7 @@ with lib.amaali7; {
   amaali7 = {
     archetypes = {
       workstation = enabled;
-      gaming = enabled;
+      # gaming = enabled;
     };
 
     # hardware.audio = {

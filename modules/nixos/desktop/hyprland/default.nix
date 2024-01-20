@@ -43,7 +43,7 @@ in {
             swww
             hyprland
             hyprland-protocols
-            hyprland-share-picker
+            # hyprland-share-picker
             xdg-desktop-portal-hyprland
             wlprop
             inputs.hyprland-contrib.packages.${pkgs.system}.hyprprop

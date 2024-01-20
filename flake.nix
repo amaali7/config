@@ -24,12 +24,15 @@
     nixos-generators.inputs.nixpkgs.follows = "nixpkgs";
 
     # Snowfall Lib
-    snowfall-lib.url = "github:snowfallorg/lib";
+    snowfall-lib.url = "github:snowfallorg/lib?ref=v2.1.1";
     snowfall-lib.inputs.nixpkgs.follows = "nixpkgs";
 
     # Snowfall Flake
-    flake.url = "github:snowfallorg/flake";
+    flake.url = "github:snowfallorg/flake?ref=v1.1.0";
     flake.inputs.nixpkgs.follows = "unstable";
+
+    # Snowfall Thaw
+    thaw.url = "github:snowfallorg/thaw?ref=v1.0.4";
 
     # Comma
     comma.url = "github:nix-community/comma";
@@ -204,15 +207,16 @@
     lib.mkFlake {
       channels-config = {
         allowUnfree = true;
-        # permittedInsecurePackages = [
-        #   # @FIXME(jakehamilton): This is a workaround for 22.11 and can
-        #   # be removed once NixPkgs is upgraded to 23.05.
-        #   # "electron-20.3.11"
-        #   # "nodejs-16.20.0"
-        #   # "python-2.7.18.6"
-        #   "electron-24.8.6"
-        #   # "electron-22.3.27"
-        # ];
+        permittedInsecurePackages = [
+          #   # @FIXME(jakehamilton): This is a workaround for 22.11 and can
+          #   # be removed once NixPkgs is upgraded to 23.05.
+          #   # "electron-20.3.11"
+          #   # "nodejs-16.20.0"
+          #   # "python-2.7.18.6"
+          #   "electron-24.8.6"
+          #   # "electron-22.3.27"
+          "electron-25.9.0"
+        ];
       };
       overlays = with inputs; [
         neovim.overlays.default
@@ -231,7 +235,7 @@
         # attic.nixosModules.atticd
       ];
       systems.hosts.laptop.modules = with inputs;
-        [ nixos-hardware.nixosModules.framework ];
+        [ nixos-hardware.nixosModules.dell-latitude-7390 ];
       #
       deploy = lib.mkDeploy { inherit (inputs) self; };
 

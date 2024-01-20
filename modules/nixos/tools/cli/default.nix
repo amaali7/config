@@ -29,7 +29,7 @@ in {
         ntfs3g
         killall
         bat
-        exa
+        eza
         ranger
         socat
         jq
