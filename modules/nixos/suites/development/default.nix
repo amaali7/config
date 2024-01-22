@@ -12,7 +12,7 @@ with lib.amaali7; let
     drawio = enabled;
     neovide = enabled;
     obsidian = enabled;
-    surrealdb = enabled;
+    # surrealdb = enabled;
   };
   cli-apps = {
     zellij = enabled;
