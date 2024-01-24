@@ -13,7 +13,7 @@ in
   config = mkIf cfg.enable {
     amaali7 = {
       apps = {
-        element = enabled;
+        # element = enabled;
         telegram = enabled;
         whatsapp = enabled;
       };

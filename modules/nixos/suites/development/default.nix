@@ -9,9 +9,9 @@ with lib.amaali7; let
   cfg = config.amaali7.suites.development;
   apps = {
     docker = enabled;
-    drawio = enabled;
+    #drawio = enabled;
     neovide = enabled;
-    obsidian = enabled;
+    #obsidian = enabled;
     # surrealdb = enabled;
   };
   cli-apps = {

@@ -57,28 +57,6 @@
       unstable.follows = "unstable";
     };
 
-    # Binary Cache
-    attic = {
-      url = "github:zhaofengli/attic";
-
-      # @FIXME(jakehamilton): A specific version of Rust is needed right now or
-      # the build fails. Re-enable this after some time has passed.
-      inputs.nixpkgs.follows = "unstable";
-      inputs.nixpkgs-stable.follows = "nixpkgs";
-    };
-
-    # Vault Integration
-    vault-service = {
-      url = "github:DeterminateSystems/nixos-vault-service";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    # Flake Hygiene
-    flake-checker = {
-      url = "github:DeterminateSystems/flake-checker";
-      inputs.nixpkgs.follows = "unstable";
-    };
-
     # Discord Replugged
     replugged.url = "github:LunNova/replugged-nix-flake";
     replugged.inputs.nixpkgs.follows = "unstable";
@@ -93,29 +71,6 @@
       flake = false;
     };
 
-    # Cows!
-    cowsay = {
-      url = "github:snowfallorg/cowsay";
-      # @NOTE(jakehamilton): A recent version of VHS currently fails
-      # causes cow2img to fail. This needs to be fixed upstream:
-      # https://github.com/charmbracelet/vhs/issues/361
-
-      # inputs.nixpkgs.follows = "nixpkgs";
-      # inputs.unstable.follows = "unstable";
-    };
-
-    # Backup management
-    icehouse = {
-      url = "github:snowfallorg/icehouse";
-      inputs.nixpkgs.follows = "nixpkgs";
-      # inputs.unstable.follows = "unstable";
-    };
-
-    # Yubikey Guide
-    yubikey-guide = {
-      url = "github:drduh/YubiKey-Guide";
-      flake = false;
-    };
 
     # GPG default configuration
     gpg-base-conf = {
@@ -128,41 +83,6 @@
       flake = false;
     };
 
-    # Hosted Sites
-    lasersandfeelings = {
-      url = "github:jakehamilton/lasersandfeelings";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.unstable.follows = "unstable";
-    };
-    pungeonquest = {
-      url = "github:jakehamilton/pungeonquest";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.unstable.follows = "unstable";
-    };
-    scrumfish = {
-      url = "github:jakehamilton/scrumfi.sh";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.unstable.follows = "unstable";
-    };
-    retrospectacle = {
-      url = "github:jakehamilton/retrospectacle.app";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.unstable.follows = "unstable";
-    };
-    jakehamilton-website = {
-      url = "github:jakehamilton/jakehamilton.dev";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.unstable.follows = "unstable";
-    };
-    noop-ai-website = {
-      url = "github:noopai/noop.ai";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.unstable.follows = "unstable";
-    };
-    sokoban-app-website = {
-      url = "https://github.com/jakehamilton/sokoban.app/releases/download/v1/sokoban.app.tar.gz";
-      flake = false;
-    };
     snowfall-docs = {
       url = "github:snowfallorg/docs";
       inputs.nixpkgs.follows = "nixpkgs";
