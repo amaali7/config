@@ -52,7 +52,7 @@ in {
           enable = true;
           user = "ai3wm";
         };
-        gdm = { enable = true; };
+        sddm = { enable = true; };
       };
     };
     services.gvfs.enable = true;
