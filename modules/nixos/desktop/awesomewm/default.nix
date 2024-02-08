@@ -30,7 +30,7 @@ in
         themes = enabled;
         xfce = enabled;
       };
-      system.fonts = enabled;
+      # system.fonts = enabled;
       home = {
         extraOptions = {
           home.packages = with pkgs; [
