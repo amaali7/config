@@ -17,10 +17,10 @@ in
     #   "Audio nodes to pass to Pipewire as `context.objects`.";
     # modules = mkOpt (listOf attrs) [ ]
     #   "Audio modules to pass to Pipewire as `context.modules`.";
-    # extra-packages = mkOpt (listOf package) [
-    #   pkgs.qjackctl
-    #   pkgs.easyeffects
-    # ] "Additional packages to install.";
+    extra-packages = mkOpt (listOf package) [
+      pkgs.qjackctl
+      pkgs.easyeffects
+    ] "Additional packages to install.";
   };
 
   config = mkIf cfg.enable {
