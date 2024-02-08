@@ -40,6 +40,7 @@ in
         storage = enabled;
         networking = enabled;
         video = enabled;
+        bluetooth = enabled;
       };
 
       services = {
