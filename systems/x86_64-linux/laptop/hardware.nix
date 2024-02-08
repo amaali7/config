@@ -60,8 +60,8 @@
   # virtualisation.libvirtd.enable = true;
   #  hardware.pulseaudio.enable = true;
   #  hardware.pulseaudio.extraConfig = "load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1";
-  # hardware.acpilight.enable = true;
-  # powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
+  hardware.acpilight.enable = true;
+  powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
   hardware.cpu.intel.updateMicrocode =
     lib.mkDefault config.hardware.enableRedistributableFirmware;
 }
