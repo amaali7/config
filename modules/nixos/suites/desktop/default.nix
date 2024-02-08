@@ -14,8 +14,9 @@ in
   config = mkIf cfg.enable {
     amaali7 = {
       desktop = {
-        # hyprland = enabled;
+        hyprland = enabled;
         sway = enabled;
+        awesomewm = enabled;
         # cde = enabled;
         addons = {
           wallpapers = enabled;

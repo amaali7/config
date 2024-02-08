@@ -41,7 +41,6 @@ in
       # (amaali7.nixos-hosts.override {
       #   hosts = inputs.self.nixosConfigurations;
       # })
-      deploy-rs
       nixfmt
       nix-index
       nix-prefetch-git
@@ -51,7 +50,6 @@ in
       nil
       rnix-lsp
       stdenv
-      deploy-rs
     ];
 
     nix =

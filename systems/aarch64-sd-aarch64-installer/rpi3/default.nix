@@ -3,49 +3,34 @@
 with lib;
 with lib.amaali7;
 {
-  # imports = with inputs.nixos-hardware.nixosModules; [
-  #   (modulesPath + "/installer/scan/not-detected.nix")
-  # ];
   imports = [
-    (modulesPath + "/profiles/base.nix")
-    (modulesPath + "/profiles/installation-device.nix")
-    (modulesPath + "/installer/cd-dvd/sd-image.nix")
+    (modulesPath + "/installer/sd-card/sd-image.nix")
   ];
-
-  boot.loader.grub.enable = false;
-  boot.loader.raspberryPi.enable = true;
-  boot.loader.raspberryPi.version = 4;
-  boot.kernelPackages = pkgs.linuxPackages_rpi4;
-
-  boot.consoleLogLevel = lib.mkDefault 7;
+  fileSystems."/" = lib.mkDefault {
+    device = "/dev/disk/by-uuid/dbe6da9d-f411-4d35-b1f7-db3c635712f1";
+    fsType = "btrfs";
+    options = [ "subvol=root" ];
+  };
+  
+  fileSystems."/nix" = lib.mkDefault  {
+    device = "/dev/disk/by-uuid/dbe6da9d-f411-4d35-b1f7-db3c635712f1";
+    fsType = "btrfs";
+    options = [ "subvol=nix" ];
+  };
+  
+  fileSystems."/home" = lib.mkDefault  {
+    device = "/dev/disk/by-uuid/dbe6da9d-f411-4d35-b1f7-db3c635712f1";
+    fsType = "btrfs";
+    options = [ "subvol=home" ];
+  };
 
   sdImage = {
-    firmwareSize = 128;
-    # This is a hack to avoid replicating config.txt from boot.loader.raspberryPi
-    populateFirmwareCommands =
-      "${config.system.build.installBootLoader} ${config.system.build.toplevel} -d ./firmware";
-    # As the boot process is done entirely in the firmware partition.
-    populateRootCommands = "";
+    compressImage = false;
   };
-
-  # the installation media is also the installation target,
-  # so we don't want to provide the installation configuration.nix.
-  installer.cloneConfig = false;
-
+  
   amaali7 = {
-    archetypes = {
-      server = enabled;
-    };
-
-    system = {
-
-
-      boot = {
-        # Raspberry Pi requires a specific bootloader.
-        enable = mkForce false;
-      };
-    };
-  };
+    archtypes.rpi = enabled;
+  };   
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

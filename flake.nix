@@ -110,17 +110,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  # Older versions use `nix.binaryCaches`
-  nix.settings.substituters = [
-    "https://cache.nixos.org?priority=10"
-    "https://fortuneteller2k.cachix.org"
-  ];
-
-  # Older versions use `nix.binaryCachePublicKeys`
-  nix.settings.trusted-public-keys = [
-    "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
-    "fortuneteller2k.cachix.org-1:kXXNkMV5yheEQwT0I4XYh1MaCSz+qg72k8XAi2PthJI="
-  ];
   outputs = inputs:
     let
       lib = inputs.snowfall-lib.mkLib {
@@ -136,6 +125,18 @@
       };
     in
     lib.mkFlake {
+      nixConfig = {
+        extra-substituters = [
+          "https://cache.nixos.org?priority=10"
+          "https://fortuneteller2k.cachix.org"
+
+        ];
+        extra-trusted-public-keys = [
+          "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
+          "fortuneteller2k.cachix.org-1:kXXNkMV5yheEQwT0I4XYh1MaCSz+qg72k8XAi2PthJI="
+        ];
+      };
+
       channels-config = {
         allowUnfree = true;
         permittedInsecurePackages = [

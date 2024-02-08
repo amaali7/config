@@ -27,16 +27,16 @@ in
         shell = pkgs.zsh;
       };
     };
-    environment.interactiveShellInit = "$HOME/export-esp.sh";
+    # environment.interactiveShellInit = "$HOME/export-esp.sh";
     users.defaultUserShell = pkgs.zsh;
     environment.shells = with pkgs; [ zsh ];
     programs.zsh = {
       enable = true;
       shellAliases = {
         ll = "ls -l";
-        ls = "lsd";
-        gadd = "git add -A";
-        gcom = "git commit -m $1";
+        #ls = "lsd";
+        g-add = "git add -A";
+        g-com = "git commit -m $1";
       };
       histSize = 10000;
       ohMyZsh = {

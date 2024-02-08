@@ -28,12 +28,12 @@ in
         font-awesome_4
         font-awesome_5
         victor-mono
-        material-icons
+        # material-icons
         fontconfig
         source-code-pro
         terminus_font
         terminus_font_ttf
-
+        iosevka
         jost
         lexend
         noto-fonts
@@ -42,7 +42,7 @@ in
         roboto
 
         # nerdfonts
-        (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
+        (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" "IosevkaTerm" "Iosevka" ]; })
       ] ++ cfg.fonts;
 
       # use fonts specified by user rather than default ones

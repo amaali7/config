@@ -30,6 +30,7 @@ in
         themes = enabled;
         xfce = enabled;
       };
+      system.fonts = enabled;
       home = {
         extraOptions = {
           home.packages = with pkgs; [
@@ -37,6 +38,10 @@ in
             rofi
             imagemagick
             sassc
+            picom-allusive
+            wezterm
+            material-icons
+            material-symbols
           ];
         };
       };

@@ -21,21 +21,21 @@ in
       # @TODO(jakehamilton): Enable this once Attic is configured again.
       # cache.public = enabled;
 
-      cli-apps = {
-        flake = enabled;
-      };
+ #     cli-apps = {
+  #      flake = enabled;
+  #    };
 
       tools = {
         git = enabled;
-        fup-repl = enabled;
-        comma = enabled;
-        bottom = enabled;
-        direnv = enabled;
+   #     fup-repl = enabled;
+   #     comma = enabled;
+   #     bottom = enabled;
+   #     direnv = enabled;
       };
 
       hardware = {
-        storage = enabled;
-        networking = enabled;
+#        storage = enabled;
+        # networking = enabled;
       };
 
       services = {
