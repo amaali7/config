@@ -43,7 +43,7 @@ in
           package = pkgs.firefox.override (
             {
               cfg = {
-                enableBrowserpass = true;
+                # enableBrowserpass = true;
                 # enableGnomeExtensions = config.amaali7.desktop.gnome.enable;
               };
 
