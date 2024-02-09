@@ -81,6 +81,8 @@ in {
     environment.systemPackages = with pkgs;
       with pkgs.amaali7; [
         arc-theme
+        gradience
+        adw-gtk3
         arc-icon-theme
       ];
   };
