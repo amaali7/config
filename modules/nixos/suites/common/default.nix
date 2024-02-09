@@ -33,6 +33,7 @@ in
         nix-ld = enabled;
         bottom = enabled;
         cli = enabled;
+        archive = enabled;
       };
 
       hardware = {
