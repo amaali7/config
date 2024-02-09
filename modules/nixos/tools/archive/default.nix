@@ -8,6 +8,7 @@ in {
   };
 
   config = mkIf cfg.enable {
+    amaali7.apps.xarchiver = enabled;
     environment.systemPackages = with pkgs;
       with pkgs.amaali7; [
         unzip
