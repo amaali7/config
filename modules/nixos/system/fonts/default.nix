@@ -28,7 +28,7 @@ in
         font-awesome_4
         font-awesome_5
         victor-mono
-        # material-icons
+        material-icons
         fontconfig
         source-code-pro
         terminus_font
