@@ -10,7 +10,7 @@ in {
     amaali7 = {
       apps = {
         altair = enabled;
-        drawio = enabled;
+        # drawio = enabled;
         docker = enabled;
       };
     };
