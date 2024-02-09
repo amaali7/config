@@ -14,7 +14,6 @@ in
     amaali7 = {
       apps = {
         gimp = enabled;
-        mousai = enabled;
         inkscape = enabled;
       };
     };

@@ -7,6 +7,13 @@ in {
   };
 
   config = mkIf cfg.enable {
+    amaali7 = {
+      apps = {
+        altair = enabled;
+        drawio = enabled;
+        docker = enabled;
+      };
+    };
     environment.systemPackages = with pkgs; [
       html-tidy
       nodePackages.stylelint

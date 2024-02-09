@@ -28,6 +28,7 @@ in
         social = enabled;
         media = enabled;
         music = enabled;
+        office = enabled;
       };
       services = enabled;
 

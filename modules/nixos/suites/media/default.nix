@@ -10,5 +10,13 @@ in
     enable = mkBoolOpt false "Whether or not to enable media configuration.";
   };
 
-  config = mkIf cfg.enable { amaali7 = { apps = { ani-cli = enabled; freetube = enabled; }; }; };
+  config = mkIf cfg.enable {
+    amaali7 = {
+      apps = {
+        mousai = enabled;
+        ani-cli = enabled;
+        freetube = enabled;
+      };
+    };
+  };
 }
