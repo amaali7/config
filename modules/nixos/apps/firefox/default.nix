@@ -7,7 +7,7 @@ let
   defaultSettings = {
     "browser.aboutwelcome.enabled" = false;
     "browser.meta_refresh_when_inactive.disabled" = true;
-    "browser.startup.homepage" = "https://hamho.me";
+    "browser.startup.homepage" = "https://google.com";
     "browser.bookmarks.showMobileBookmarks" = true;
     "browser.urlbar.suggest.quicksuggest.sponsored" = false;
     "browser.newtabpage.activity-stream.showSponsoredTopSites" = false;
@@ -26,31 +26,14 @@ in
   };
 
   config = mkIf cfg.enable {
-    amaali7.desktop.addons.firefox-nordic-theme = enabled;
-
-    # services.gnome.gnome-browser-connector.enable = config.amaali7.desktop.gnome.enable;
-
+    # amaali7.desktop.addons.firefox-nordic-theme = enabled;
     amaali7.home = {
-      # file = {
-      #   ".mozilla/native-messaging-hosts/com.dannyvankooten.browserpass.json".source = "${pkgs.browserpass}/lib/mozilla/native-messaging-hosts/com.dannyvankooten.browserpass.json";
-      #
-      #   ".mozilla/native-messaging-hosts/org.gnome.chrome_gnome_shell.json".source = mkIf config.amaali7.desktop.gnome.enable "${pkgs.chrome-gnome-shell}/lib/mozilla/native-messaging-hosts/org.gnome.chrome_gnome_shell.json";
-      # };
-      #
       extraOptions = {
         programs.firefox = {
           enable = true;
           package = pkgs.firefox.override (
             {
-              cfg = {
-                # enableBrowserpass = true;
-                # enableGnomeExtensions = config.amaali7.desktop.gnome.enable;
-              };
-
-              # extraNativeMessagingHosts =
-              #   optional
-              #     config.amaali7.desktop.gnome.enable
-              #     pkgs.gnomeExtensions.gsconnect;
+              cfg = { };
             }
           );
 
