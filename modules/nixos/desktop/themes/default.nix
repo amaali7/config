@@ -7,6 +7,11 @@ in {
   };
 
   config = mkIf cfg.enable {
+    environment.sessionVariables = {
+      QT_QPA_PLATFORMTHEME = "gtk2";
+    };
+
+
     environment.systemPackages = with pkgs;
       with pkgs.amaali7; [
         # fonts
@@ -26,6 +31,7 @@ in {
         font-awesome
 
         # themes
+        libsForQt5.qtstyleplugins
         qogir-theme # gtk
         papirus-icon-theme
         qogir-icon-theme
