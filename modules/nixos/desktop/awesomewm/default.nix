@@ -17,7 +17,7 @@ in
       };
       windowManager.awesome = {
         enable = true;
-        package = pkgs.awesome-git;
+        package = pkgs.awesome-luajit-git;
         luaModules = with pkgs.luaPackages; [
           luarocks # is the package manager for Lua modules
           luadbi-mysql # Database abstraction layer
