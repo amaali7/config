@@ -31,11 +31,16 @@ in {
         qogir-icon-theme
         whitesur-icon-theme
         colloid-icon-theme
-        adw-gtk3
         arc-theme
         gradience
         adw-gtk3
         arc-icon-theme
+        dark-decay-gtk
+        decayce-gtk
+        material-symbols
+        monoco-nf
+        sfmono-nf
+        st
       ];
   };
 }
