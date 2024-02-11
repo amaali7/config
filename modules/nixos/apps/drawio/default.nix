@@ -7,5 +7,5 @@ in {
   };
 
   config =
-    mkIf cfg.enable { environment.systemPackages = with pkgs; [ drawio ]; };
+    mkIf cfg.enable { environment.systemPackages = with pkgs.amaali7; [ draw-io ]; };
 }

@@ -10,6 +10,7 @@ in
 
   config = mkIf cfg.enable {
     services.acpid = enabled;
+    services.clipmenu = enabled;
     services.xserver = {
       enable = true;
       displayManager = {
