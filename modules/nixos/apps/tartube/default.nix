@@ -7,5 +7,5 @@ in {
   };
 
   config =
-    mkIf cfg.enable { environment.systemPackages = with pkgs; [ tartube-yt-dlp ]; };
+    mkIf cfg.enable { environment.systemPackages = with pkgs; [ tartube-yt-dlp yt-dlp ]; };
 }
