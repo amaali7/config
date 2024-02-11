@@ -35,7 +35,7 @@ in
       shellAliases = {
         ll = "${pkgs.lsd}/bin/lsd -l";
         ls = "${pkgs.lsd}/bin/lsd";
-        lz = "lazygit";
+        lzg = "lazygit";
       };
       histSize = 10000;
       ohMyZsh = {
