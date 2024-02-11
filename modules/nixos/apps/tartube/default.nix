@@ -2,7 +2,7 @@
 with lib; with lib.amaali7;
 let cfg = config.amaali7.apps.tartube;
 in {
-  options.amaali7.apps.altair = with types; {
+  options.amaali7.apps.tartube = with types; {
     enable = mkBoolOpt false "Whether or not to enable tartube.";
   };
 
