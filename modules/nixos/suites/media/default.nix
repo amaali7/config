@@ -16,6 +16,7 @@ in
         mousai = enabled;
         ani-cli = enabled;
         freetube = enabled;
+        tartube = enabled;
       };
     };
   };
