@@ -27,7 +27,7 @@ in {
         acpid
         wmctrl
         xdotool
-        # xclip
+        xclip
         scrot
         acpi
         dunst
