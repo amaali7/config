@@ -33,10 +33,9 @@ in
     programs.zsh = {
       enable = true;
       shellAliases = {
-        ll = "ls -l";
-        #ls = "lsd";
-        g-add = "git add -A";
-        g-com = "git commit -m $1";
+        ll = "${pkgs.lsd}/bin/lsd -l";
+        ls = "${pkgs.lsd}/bin/lsd";
+        lz = "lazygit";
       };
       histSize = 10000;
       ohMyZsh = {

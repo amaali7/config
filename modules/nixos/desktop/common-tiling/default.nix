@@ -9,7 +9,7 @@ in {
   config = mkIf cfg.enable {
     environment.systemPackages = with pkgs;
       with pkgs.amaali7; [
-
+        arandr
         lxappearance
         gvfs
         dex
@@ -26,7 +26,7 @@ in {
         inotify-tools
         acpid
         wmctrl
-        # xdotool
+        xdotool
         # xclip
         scrot
         acpi
