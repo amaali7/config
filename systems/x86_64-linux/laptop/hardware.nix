@@ -27,6 +27,11 @@
       keyFile = "/keyfile.bin";
       allowDiscards = true;
     };
+    luks.devices."home" = {
+      device = "/dev/disk/by-uuid/fdc0aa7c-f4b3-45d9-b4ff-466cb252e2d3";
+      keyFile = "/keyfile.bin";
+      allowDiscards = true;
+    };
     secrets = { "keyfile.bin" = "/etc/secrets/initrd/keyfile.bin"; };
   };
 
@@ -45,14 +50,9 @@
     device = "/dev/disk/by-uuid/d77bbc23-ea8f-41ce-90d8-bcb1da447bbb";
     fsType = "ext4";
   };
-  fileSystems."/windows" = {
-    device = "/dev/disk/by-uuid/5CA8E333A8E309FA";
-    fsType = "ntfs";
-  };
-  fileSystems."/home/ai3wm" = {
-    device = "/dev/disk/by-uuid/d3ecbcd2-a11f-4330-b812-b95edcffc03c";
-    fsType = "btrfs";
-    options = [ "subvol=home" ];
+    fileSystems."/home/ai3wm" = {
+    device = "/dev/disk/by-uuid/4ce2e9eb-6bdb-4758-8c62-6a86aa23740c";
+    fsType = "ext4";
   };
 
   swapDevices = [ ];
