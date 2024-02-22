@@ -5,8 +5,8 @@ with lib.amaali7;
 let
   cfg = config.amaali7.suites.games;
   apps = {
-    # protontricks = enabled;
-    doukutsu-rs = enabled;
+    openra = enabled;
+    xonotic = enabled;
   };
 in
 {
