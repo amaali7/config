@@ -23,6 +23,13 @@
     nixos-generators.url = "github:nix-community/nixos-generators";
     nixos-generators.inputs.nixpkgs.follows = "nixpkgs";
 
+
+    # Snowfall Lib
+    nixvim.url = "github:/nix_nvim";
+    nixvim.inputs.nixpkgs.follows = "nixpkgs";
+
+
+
     # Snowfall Lib
     snowfall-lib.url = "github:snowfallorg/lib?ref=v2.1.1";
     snowfall-lib.inputs.nixpkgs.follows = "nixpkgs";

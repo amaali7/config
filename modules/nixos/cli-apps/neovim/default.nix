@@ -1,4 +1,4 @@
-{ options, lib, config, pkgs, ... }:
+{ inputs, lib, config, pkgs, ... }:
 with lib; with lib.amaali7;
 let cfg = config.amaali7.cli-apps.neovim;
 in {
@@ -8,6 +8,7 @@ in {
 
   config = mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
+      inputs.nixvim.packages.${pkgs.system}.default
       neovim
       nil
       stylua
