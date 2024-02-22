@@ -24,8 +24,8 @@
     nixos-generators.inputs.nixpkgs.follows = "nixpkgs";
 
 
-    # Snowfall Lib
-    nixvim.url = "github:/nix_nvim";
+    # Nix Nvim
+    nixvim.url = "github:amaali7/nix_nvim";
     nixvim.inputs.nixpkgs.follows = "nixpkgs";
 
 
