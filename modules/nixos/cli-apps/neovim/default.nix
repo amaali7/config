@@ -8,8 +8,8 @@ in {
 
   config = mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
-      # inputs.nixvim.packages.${pkgs.system}.default
-      neovim
+      inputs.nixvim.packages.${pkgs.system}.default
+      #neovim
       nil
       stylua
       lua-language-server
