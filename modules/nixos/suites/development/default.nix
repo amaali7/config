@@ -1,39 +1,29 @@
-{ options
-, config
-, lib
-, pkgs
-, ...
-}:
+{ options, config, lib, pkgs, ... }:
 with lib;
-with lib.amaali7; let
+with lib.amaali7;
+let
   cfg = config.amaali7.suites.development;
   apps = {
     docker = enabled;
     #drawio = enabled;
-    neovide = enabled;
+    # neovide = enabled;
+    emacs = enabled;
     #obsidian = enabled;
     # surrealdb = enabled;
   };
   cli-apps = {
     zellij = enabled;
-    neovim = enabled;
+    #neovim = enabled;
   };
-in
-{
+in {
   options.amaali7.suites.development = with types; {
-    enable =
-      mkBoolOpt false
-        "Whether or not to enable common development configuration.";
+    enable = mkBoolOpt false
+      "Whether or not to enable common development configuration.";
   };
 
   config = mkIf cfg.enable {
-    networking.firewall.allowedTCPPorts = [
-      12345
-      3000
-      3001
-      8080
-      8081
-    ];
+    networking.firewall.allowedTCPPorts = [ 12345 3000 3001 8080 8081 ];
+    environment.systemPackages = with pkgs; [ semgrep ];
 
     amaali7 = {
       inherit apps cli-apps;

@@ -2,10 +2,8 @@
 
 with lib;
 with lib.amaali7;
-let
-  cfg = config.amaali7.suites.desktop;
-in
-{
+let cfg = config.amaali7.suites.desktop;
+in {
   options.amaali7.suites.desktop = with types; {
     enable =
       mkBoolOpt false "Whether or not to enable common desktop configuration.";
@@ -14,8 +12,8 @@ in
   config = mkIf cfg.enable {
     amaali7 = {
       desktop = {
-        hyprland = enabled;
-        sway = enabled;
+        # hyprland = enabled;
+        # sway = enabled;
         awesomewm = enabled;
         # cde = enabled;
         addons = {

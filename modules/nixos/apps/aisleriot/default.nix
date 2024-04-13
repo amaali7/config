@@ -11,8 +11,8 @@ in
   };
 
   config = mkIf cfg.enable {
-    environment.systemPackages = with pkgs.amaali7; [
-gnome.aisleriot
+    environment.systemPackages = with pkgs; [
+      gnome.aisleriot
     ];
   };
 }

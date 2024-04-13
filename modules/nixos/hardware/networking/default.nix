@@ -3,8 +3,7 @@
 with lib;
 with lib.amaali7;
 let cfg = config.amaali7.hardware.networking;
-in
-{
+in {
   options.amaali7.hardware.networking = with types; {
     enable = mkBoolOpt false "Whether or not to enable networking support";
     hosts = mkOpt attrs { }
@@ -25,6 +24,7 @@ in
       };
     };
     environment.systemPackages = with pkgs; [
+      inetutils
       iw
       dnsmasq
       networkmanagerapplet

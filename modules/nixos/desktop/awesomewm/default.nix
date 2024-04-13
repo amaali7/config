@@ -1,9 +1,8 @@
 { options, config, lib, pkgs, ... }:
-with lib; with lib.amaali7;
-let
-  cfg = config.amaali7.desktop.awesomewm;
-in
-{
+with lib;
+with lib.amaali7;
+let cfg = config.amaali7.desktop.awesomewm;
+in {
   options.amaali7.desktop.awesomewm = with types; {
     enable = mkBoolOpt false "Whether or not to enable Awesome Window Manager.";
   };
@@ -13,9 +12,7 @@ in
     services.clipmenu = enabled;
     services.xserver = {
       enable = true;
-      displayManager = {
-        defaultSession = "none+awesome";
-      };
+      displayManager = { defaultSession = "none+awesome"; };
       windowManager.awesome = {
         enable = true;
         package = pkgs.awesome-git;
@@ -35,6 +32,8 @@ in
       home = {
         extraOptions = {
           home.packages = with pkgs; [
+            lm_sensors
+            smartmontools
             foot
             rofi
             imagemagick

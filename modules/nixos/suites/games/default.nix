@@ -6,6 +6,7 @@ let
   cfg = config.amaali7.suites.games;
   apps = {
     openra = enabled;
+    aisleriot = enabled;
     xonotic = enabled;
   };
 in

@@ -9,6 +9,7 @@ with lib.amaali7;
     };
     cli-apps = {
       home-manager = enabled;
+      # nixvim = enabled;
     };
   };
 }

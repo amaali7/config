@@ -2,8 +2,7 @@
 with lib;
 with lib.amaali7;
 let cfg = config.amaali7.archetypes.workstation;
-in
-{
+in {
   options.amaali7.archetypes.workstation = with types; {
     enable =
       mkBoolOpt false "Whether or not to enable the workstation archetype.";
@@ -19,22 +18,20 @@ in
       shell.zsh = enabled;
       suites = {
         common = enabled;
-        common-slim = enabled;
+         common-slim = enabled;
         desktop = enabled;
-        development = enabled;
-        emulation = enabled;
-        art = enabled;
-        video = enabled;
-        social = enabled;
-        media = enabled;
-        music = enabled;
-        office = enabled;
+         development = enabled;
+         emulation = enabled;
+         art = enabled;
+         video = enabled;
+         social = enabled;
+         media = enabled;
+         music = enabled;
+         office = enabled;
       };
       services = enabled;
 
-      tools = {
-        appimage-run = enabled;
-      };
+      # tools = { appimage-run = enabled; };
 
       home = {
         file = {
@@ -62,7 +59,11 @@ in
               XCURSOR_THEME = "Qogir";
               NIXPKGS_ALLOW_UNFREE = "1";
             };
-            sessionPath = [ "$HOME/.local/bin" "$HOME/.cargo/bin/" "$HOME/.npm-packages/bin/" ];
+            sessionPath = [
+              "$HOME/.local/bin"
+              "$HOME/.cargo/bin/"
+              "$HOME/.npm-packages/bin/"
+            ];
           };
           xdg.desktopEntries = {
             "org.wezfurlong.wezterm" = {

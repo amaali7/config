@@ -23,15 +23,8 @@
     nixos-generators.url = "github:nix-community/nixos-generators";
     nixos-generators.inputs.nixpkgs.follows = "nixpkgs";
 
-
-    # Nix Nvim
-    nixvim.url = "github:amaali7/nix_nvim";
-    nixvim.inputs.nixpkgs.follows = "nixpkgs";
-
-
-
     # Snowfall Lib
-    snowfall-lib.url = "github:snowfallorg/lib?ref=v2.1.1";
+    snowfall-lib.url = "github:snowfallorg/lib/dev"; # ?ref=v2.1.1";
     snowfall-lib.inputs.nixpkgs.follows = "nixpkgs";
 
     # Snowfall Flake
@@ -77,7 +70,6 @@
       url = "github:DapperCore/NordCord";
       flake = false;
     };
-
 
     # GPG default configuration
     gpg-base-conf = {
@@ -130,8 +122,7 @@
           };
         };
       };
-    in
-    lib.mkFlake {
+    in lib.mkFlake {
       nixConfig = {
         substituters = [
           "https://cache.nixos.org?priority=10"
@@ -154,13 +145,14 @@
           #   # "python-2.7.18.6"
           #   "electron-24.8.6"
           #   # "electron-22.3.27"
-          "electron-25.9.0"
+          # "electron-25.9.0"
+          "nix-2.15.3"
         ];
       };
       overlays = with inputs; [
         neovim.overlays.default
         flake.overlays.default
-        snowfall-docs.overlay
+        # snowfall-docs.overlays
         nixgl.overlay
         nixpkgs-f2k.overlays.default
       ];
@@ -174,7 +166,10 @@
         # attic.nixosModules.atticd
       ];
       systems.hosts.laptop.modules = with inputs;
-        [ nixos-hardware.nixosModules.dell-latitude-7390 ];
+        [
+          nixos-hardware.nixosModules.dell-latitude-7390
+
+        ];
       #
       deploy = lib.mkDeploy { inherit (inputs) self; };
 

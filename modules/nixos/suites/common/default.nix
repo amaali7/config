@@ -2,18 +2,16 @@
 
 with lib;
 with lib.amaali7;
-let
-  cfg = config.amaali7.suites.common;
-in
-{
+let cfg = config.amaali7.suites.common;
+in {
   options.amaali7.suites.common = with types; {
     enable = mkBoolOpt false "Whether or not to enable common configuration.";
   };
 
   config = mkIf cfg.enable {
-    environment.systemPackages = [
-      pkgs.amaali7.list-iommu
-    ];
+    # environment.systemPackages = [
+    #   pkgs.amaali7.list-iommu
+    # ];
 
     amaali7 = {
       nix = enabled;
@@ -21,9 +19,7 @@ in
       # @TODO(jakehamilton): Enable this once Attic is configured again.
       # cache.public = enabled;
 
-      cli-apps = {
-        flake = enabled;
-      };
+      cli-apps = { flake = enabled; };
 
       tools = {
         git = enabled;
