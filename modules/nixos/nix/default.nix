@@ -45,7 +45,7 @@ in {
       nixpkgs-fmt
       nixd
       nil
-      rnix-lsp
+      # rnix-lsp
       stdenv
     ];
 
