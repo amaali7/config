@@ -66,10 +66,10 @@
       url = "github:NurMarvin/discord-tweaks";
       flake = false;
     };
-    discord-nord-theme = {
-      url = "github:DapperCore/NordCord";
-      flake = false;
-    };
+    #discord-nord-theme = {
+    #  url = "github:DapperCore/NordCord";
+    #  flake = false;
+    #};
 
     # GPG default configuration
     gpg-base-conf = {
