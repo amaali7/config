@@ -123,18 +123,6 @@
         };
       };
     in lib.mkFlake {
-      nixConfig = {
-        substituters = [
-          "https://cache.nixos.org?priority=10"
-          "https://fortuneteller2k.cachix.org"
-
-        ];
-        trusted-public-keys = [
-          "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
-          "fortuneteller2k.cachix.org-1:kXXNkMV5yheEQwT0I4XYh1MaCSz+qg72k8XAi2PthJI="
-        ];
-      };
-
       channels-config = {
         allowUnfree = true;
         permittedInsecurePackages = [
@@ -146,7 +134,7 @@
           #   "electron-24.8.6"
           #   # "electron-22.3.27"
           # "electron-25.9.0"
-          "nix-2.15.3"
+          # "nix-2.15.3"
         ];
       };
       overlays = with inputs; [

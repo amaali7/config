@@ -21,13 +21,13 @@ in {
          common-slim = enabled;
         desktop = enabled;
          development = enabled;
-         emulation = enabled;
-         art = enabled;
-         video = enabled;
-         social = enabled;
-         media = enabled;
-         music = enabled;
-         office = enabled;
+        #emulation = enabled;
+        # art = enabled;
+        # video = enabled;
+        # social = enabled;
+        # media = enabled;
+        # music = enabled;
+        # office = enabled;
       };
       services = enabled;
 
